@@ -1,4 +1,0 @@
-
-0;10;1c
-#!/bin/bash
-cat "Hello, World"; cat ""
