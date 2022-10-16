@@ -2,5 +2,5 @@
 
 file { '/root/.ssh/config':
   ensure  => 'present',
-  content => "\nHost *\n\tPasswordAuthentication no\tIdentityFile ~/.ssh/school",
+  content => "Host *\n\tPasswordAuthentication no\n\tIdentityFile ~/.ssh/school",
   }
