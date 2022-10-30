@@ -10,22 +10,7 @@ ifconfig
 sudo chmod 777 /var/www/html/index.nginx-debian.html
 sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
 curl 107.22.142.139
-SERVER_CONFIG=\
-"server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-        server_name _;
-        location / {
-                try_files \$uri \$uri/ =404;
-        }
-        if (\$request_filename ~ redirect_me){
-                rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-        }
-}"
-sudo chmod 777 /etc/nginx/sites-available/default
-sudo bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-available/default"
+sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/africaexchange.com permanent;/" /etc/nginx/sites-available/default;
 if [ "$(pgrep -c nginx)" -le 0 ]; then
     sudo /etc/init.d/nginx start
 else
