@@ -3,7 +3,6 @@
 sudo apt -y update
 sudo apt -y install nginx
 sudo ufw allow 'Nginx HTTP'
+curl -4 icanhazip.com
 sudo /etc/init.d/nginx start
 sudo systemctl enable nginx
-sudo apt install net-tools
-ifconfig
