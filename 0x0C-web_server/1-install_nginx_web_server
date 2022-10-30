@@ -3,7 +3,7 @@
 sudo apt -y update
 sudo apt -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo /etc/init.d/nginx start
+sudo /etc/init.d/nginx restart
 sudo systemctl enable nginx
 sudo apt install net-tools
 ifconfig
