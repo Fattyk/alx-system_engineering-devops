@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configure nginx as nginx user, listening to port 8080
+sudo -u nginx "apt -y update"
+sudo -u nginx "apt -y install nginx"
+sudo -u nginx "ufw allow 'Nginx HTTP'"
+sudo -u nginx "sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default"
+sudo -u nginx "/etc/init.d/nginx restart"
